@@ -108,11 +108,11 @@ Market liquidity is likely to be affected by the precipitation with the importan
 
 Since the goal of this project is to know whether heavy precipitation disrupts the market liquidity, hence, I do not focus on the magnitude of precipitation. To represent the heavy precipitation, I first calculate the total precipitation for all weather stations, and I create a dummy (binary) variable `rain`, which equals 1 if a precipitation of a 15-min interval is greater than the 2 times standard deviation of the daily precipitation, and 0 otherwise. Here are the results:
 
-|                  | Coef   | Std Err | t       | P\>|t\| |
-|------------------|--------|---------|---------|--------|
-| const            | 0.845  | 0.001   | 1010.28 | 0      |
-| rain             | 0.003  | 0.001   | 2.886   | 0.004  |
-| volatility_emini | 0.026  | 0       | 52.511  | 0      |
+| | Coef | Std Err | t | P>|t| |
+|------------------|--------|---------|---------|------------------|
+| const | 0.845 | 0.001 | 1010.28 | 0 |
+| rain | 0.003 | 0.001 | 2.886 | 0.004 |
+| volatility_emini | 0.026 | 0 | 52.511 | 0 |
 
 
 
