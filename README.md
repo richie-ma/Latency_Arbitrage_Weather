@@ -14,7 +14,7 @@ Latency arbitrage is one of the most popular ultra-low latency stratgies in the 
 ## Data
 In this section, I discuss both the precipitation data and the market data.
 ### Weather data
-The National Centers for Environmental Information (NCEI) (previously known as the National Climatic Data Center (NCDC) which dissolved in 2015) are operated in part by an office of the National Oceanographic and Atmospheric Administration (NOAA). The NCDC data set 3260 (DSI-3260) also known as the 15 Minute Precipitation Data is available from 1971 through 2013. Since geo-location station data is not found for this period, I use the geo-location station data in NCEI’s 2014 and onwards Hourly Precipitation Data set (HPDv2 beta version). I focus on 2018-2019 data from the DSI-32604 and the HPDv2 beta version5 that provides 15-minute precipitation intervals. The raw data have some unreasonable values (e.g., negative precipitation), and I correct these observations with 0. I intersect the HDPv2 station data with the the 2011-2013 DSI-3260 station data to obtain a list of weather stations operating in Illinois, Indiana, Michigan, Ohio, Pennsylvania, and New Jersey for 2018-2019. My station list is as follows:
+The National Centers for Environmental Information (NCEI) (previously known as the National Climatic Data Center (NCDC) which dissolved in 2015) are operated in part by an office of the National Oceanographic and Atmospheric Administration (NOAA). The NCDC data set 3260 (DSI-3260) also known as the 15 Minute Precipitation Data is available from 1971 through 2013. Since geo-location station data is not found for this period, I use the geo-location station data in NCEI’s 2014 and onwards Hourly Precipitation Data set (HPDv2 beta version). I focus on 2018-2019 data from the DSI-32604 and the HPDv2 beta version5 that provides 15-minute precipitation intervals. The raw data have some unreasonable values (e.g., negative precipitation), and I correct these observations with 0. I intersect the HDPv2 station data with the the 2011-2013 DSI-3260 station data to obtain a list of weather stations operating in Illinois, Indiana, Michigan, Ohio, Pennsylvania, and New Jersey for 2018-2019. The HPDv2 beta version readme file states precipitation data is in hundredths of an inch. My station list is as follows:
 | Station ID    | Latitude | Longitude | State | Name                        |
 |---------------|----------|-----------|-------|-----------------------------|
 | USC00111577   | 41.7372  | -87.7775  | IL    | CHICAGO MIDWAY AP 3SW      |
@@ -88,8 +88,23 @@ The National Centers for Environmental Information (NCEI) (previously known as t
 | USC00368491   | 41.6972  | -75.4827  | PA    | STILLWATER DAM            |
 | USC00368873   | 41.4792  | -79.4432  | PA    | TIONESTA 2 SE LAKE        |
 
+Here, I show a summary statistics of the precipitation during the whole sample period. Obviously, one can find that for each weather station across the whole sample period, the average precipitation is just 0.08 inches and the largest precipitation is 3.1 inches.
+|       |   precipitation |
+|-------|-----------------|
+| count |    9990         |
+| mean  |       0.0791802 |
+| std   |       0.178167  |
+| min   |       0         |
+| 25%   |       0         |
+| 50%   |       0.01      |
+| 75%   |       0.06      |
+| max   |       3.1       |
+
 ## Market Data
 In terms of futures data, I use the CME Market by Price (MBP) data provided by CME Datamine and I select the most-traded futures contracts according to the daily trading volume. For SPY data, I use the Daily Trade and Quote (TAQ) data. Specifically, I focus on the Millisecond Trades and NBBO data. Since the CME futures is traded during 18:00 to 17:00 ET while the ETF is traded during 9:30 to 16:00 ET, I concentrate regular trading hours from 9:30 to 16:00 ET. I find almost all trades are assigned the direction (e.g., buyer-initiated/seller-initiated) directly by the CME while no trade direction is assigned in the ETF by the data. Hence, I follow Lee and Ready (1991) to assign its trade direction, including both quote test and tick test. 
+
+# Market liquidity and precipitation
+Market liquidity is likely to be affected by the precipitation with the importance of communciation increasing. Market makers may reduce their liquidity provision during heavy precipitation period, because of both communication delay and picking off risks. Thus, I first assess how the precipitation affects the market liquidity during the heavy precipitation
 
 
 
