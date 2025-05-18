@@ -153,8 +153,10 @@ I identify HTF futures market signals that HFTs can arbitrage in the NY cluster 
 the NY cluster securities within 5 to 10 milliseconds after the selected futures market signals. Given current technology speeds, the minimum time to observe HFT responses is 4.5 milliseconds. Further, I cannot be certain that trade activity beyond 10 milliseconds originates from the HFTs focused on spatial latency.
 
 Identifying HFT is challenging since their behavior might manifest in various ways depending on the intensity of their activities. Similar to the analyses I created before, I create a dummy variable that equals 1 if a precipitation of a 15-min interval is greater than the 3 times standard deviation of the daily precipitation, and 0 otherwise. We focus on the trading volume and the total number of trades during the following millisecond intervals: [5ms, 6ms), [6ms, 7ms), [7ms, 8ms), [8ms, 9ms), [9ms, 10ms). The following figure shows the result for the total trading volume in the SPY ETF.
+
 <img src="images/volume_boxplot.png" alt = "Latency Aribtrage: Trading Volume" width="800">
 
+It is obvious that regardless of it is in a heavy precipitation period, the latency arbitrage concentrates between 5 milliseconds and 6 milliseconds, and the intensity of latency aribitrage gradually reduces with the time going on. That is consistitent to the intuition that the latency arbitrage heavily relies on the speed advantage and ultra-low latency traders are more likely to earn profits. During the heavy precipitation period, the trading volume between the 5 milliseconds and 6 milliseconds decreases though the median would remain almost the same. However, there are fewer observations with high trading volume like in regualr trading periods. This is also true for other millisecond bins.
 
 
 
