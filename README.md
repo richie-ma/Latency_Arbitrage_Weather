@@ -101,7 +101,7 @@ Here, I show a summary statistics of the precipitation during the whole sample p
 | max   |       3.1       |
 
 ## Market Data
-In terms of futures data, I use the CME Market by Price (MBP) data provided by CME Datamine and I select the most-traded futures contracts according to the daily trading volume. For SPY data, I use the Daily Trade and Quote (TAQ) data. Specifically, I focus on the Millisecond Trades and NBBO data. Since the CME futures is traded during 18:00 to 17:00 ET while the ETF is traded during 9:30 to 16:00 ET, I concentrate regular trading hours from 9:30 to 16:00 ET. I find almost all trades are assigned the direction (e.g., buyer-initiated/seller-initiated) directly by the CME while no trade direction is assigned in the ETF by the data. Hence, I follow Lee and Ready (1991) to assign its trade direction, including both quote test and tick test. 
+In terms of futures data, I use the CME Market by Price (MBP) data provided by CME Datamine and I select the most-traded futures contracts according to the daily trading volume. It contains all trades and quote updates up to 10 depths. For SPY data, I use the Daily Trade and Quote (TAQ) data. Specifically, I focus on the Millisecond Trades and NBBO data. Since the CME futures is traded during 18:00 to 17:00 ET while the ETF is traded during 9:30 to 16:00 ET, I concentrate regular trading hours from 9:30 to 16:00 ET. I find almost all trades are assigned the direction (e.g., buyer-initiated/seller-initiated) directly by the CME while no trade direction is assigned in the ETF by the data. Hence, I follow Lee and Ready (1991) to assign its trade direction, including both quote test and tick test. 
 
 # Market liquidity and precipitation
 Market liquidity is likely to be affected by the precipitation with the importance of communciation increasing. Market makers may reduce their liquidity provision during heavy precipitation period, because of both communication delay and picking off risks. Thus, I first assess how the precipitation affects the market liquidity during the heavy precipitation. Here, I foucus on the following liquidity indicators, including the bid-ask spread expressed in basis (dollar spread over the midpoint price), BBO dollar dpeths and non-BBO depths, both express expressed in millions, dollar trading volume. I select the volatility as control variables. Since the weather data is in 15-min interval, I calculate the time-weighted indicators for every 15 minutes. I calcualte the indicators for both futures and ETF markets.
@@ -119,6 +119,24 @@ Since the goal of this project is to know whether heavy precipitation disrupts t
 | const             | 548.152 | 2.619   | 209.308 | 0       | const             | 2368.7  | 63.367  | 37.381 | 0       |
 | rain              | -16.853 | 3.764   | -4.478  | 0       | rain              | 129.501 | 91.066  | 1.422  | 0.155   |
 | volatility\_emini | -87.802 | 1.564   | -56.123 | 0       | volatility\_emini | 3101.79 | 37.854  | 81.941 | 0       |
+
+The following are results from the ETF. Since there is non-BBO information avaiable from the TAQ data, our dependent variables only include bid-ask spread, BBO depth, and trading volume.
+
+|Bid-ask spread   | coef  | std err | t       | P>\|t\| | BBO Depth       | coef   | std err | t       | P>\|t\| |
+| --------------- | ----- | ------- | ------- | ------- | --------------- | ------ | ------- | ------- | ------- |
+| const           | 0.401 | 0.004   | 103.352 | 0       | const           | 1.085  | 0.010   | 103.493 | 0       |
+| rain            | 0.013 | 0.005   | 2.327   | 0.02    | rain            | -0.044 | 0.015   | -3.002  | 0.003   |
+| volatility\_spy | 1.261 | 0.022   | 57.403  | 0       | volatility\_spy | -1.856 | 0.059   | -31.256 | 0       |
+
+|Trading volume   | coef    | std err | t      | P>\|t\| |
+| --------------- | ------- | ------- | ------ | ------- |
+| const           | 225.808 | 9.221   | 24.489 | 0       |
+| rain            | -3.943  | 13.019  | -0.303 | 0.762   |
+| volatility\_spy | 3791.8  | 52.221  | 72.611 | 0       |
+
+
+
+
 
 
 
