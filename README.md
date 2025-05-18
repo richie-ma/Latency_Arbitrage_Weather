@@ -88,5 +88,8 @@ The National Centers for Environmental Information (NCEI) (previously known as t
 | USC00368491   | 41.6972  | -75.4827  | PA    | STILLWATER DAM            |
 | USC00368873   | 41.4792  | -79.4432  | PA    | TIONESTA 2 SE LAKE        |
 
+## Market Data
+In terms of futures data, I use the CME Market by Price (MBP) data provided by CME Datamine and I select the most-traded futures contracts according to the daily trading volume. For SPY data, I use the Daily Trade and Quote (TAQ) data. Specifically, I focus on the Millisecond Trades and NBBO data. Since the CME futures is traded during 18:00 to 17:00 ET while the ETF is traded during 9:30 to 16:00 ET, I concentrate regular trading hours from 9:30 to 16:00 ET. I find almost all trades are assigned the direction (e.g., buyer-initiated/seller-initiated) directly by the CME while no trade direction is assigned in the ETF by the data. Hence, I follow Lee and Ready (1991) to assign its trade direction, including both quote test and tick test. 
+
 
 
