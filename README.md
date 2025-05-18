@@ -106,13 +106,21 @@ In terms of futures data, I use the CME Market by Price (MBP) data provided by C
 # Market liquidity and precipitation
 Market liquidity is likely to be affected by the precipitation with the importance of communciation increasing. Market makers may reduce their liquidity provision during heavy precipitation period, because of both communication delay and picking off risks. Thus, I first assess how the precipitation affects the market liquidity during the heavy precipitation. Here, I foucus on the following liquidity indicators, including the bid-ask spread expressed in basis (dollar spread over the midpoint price), BBO dollar dpeths and non-BBO depths, both express expressed in millions, dollar trading volume. I select the volatility as control variables. Since the weather data is in 15-min interval, I calculate the time-weighted indicators for every 15 minutes. I calcualte the indicators for both futures and ETF markets.
 
-Since the goal of this project is to know whether heavy precipitation disrupts the market liquidity, hence, I do not focus on the magnitude of precipitation. To represent the heavy precipitation, I first calculate the total precipitation for all weather stations, and I create a dummy (binary) variable `rain`, which equals 1 if a precipitation of a 15-min interval is greater than the 2 times standard deviation of the daily precipitation, and 0 otherwise. Here are the results:
+Since the goal of this project is to know whether heavy precipitation disrupts the market liquidity, hence, I do not focus on the magnitude of precipitation. To represent the heavy precipitation, I first calculate the total precipitation for all weather stations, and I create a dummy (binary) variable `rain`, which equals 1 if a precipitation of a 15-min interval is greater than the 2 times standard deviation of the daily precipitation, and 0 otherwise. Here are the results for the CME E-mini futures:
 
-|                   | coef  | std err | t       | P>\|t\| |                   | coef   | std err | t       | P>\|t\| |
+| Bid-ask spread    | coef  | std err | t       | P>\|t\| | BBO depth         | coef   | std err | t       | P>\|t\| |
 | ----------------- | ----- | ------- | ------- | ------- | ----------------- | ------ | ------- | ------- | ------- |
 | const             | 0.845 | 0.001   | 1010.28 | 0       | const             | 49.999 | 0.288   | 173.695 | 0       |
 | rain              | 0.003 | 0.001   | 2.886   | 0.004   | rain              | -1.181 | 0.414   | -2.854  | 0.004   |
 | volatility\_emini | 0.026 | 0       | 52.511  | 0       | volatility\_emini | -9.964 | 0.172   | -57.943 | 0       |
+
+| Non-BBO depth     | coef    | std err | t       | P>\|t\| | Trading volume    | coef    | std err | t      | P>\|t\| |
+| ----------------- | ------- | ------- | ------- | ------- | ----------------- | ------- | ------- | ------ | ------- |
+| const             | 548.152 | 2.619   | 209.308 | 0       | const             | 2368.7  | 63.367  | 37.381 | 0       |
+| rain              | -16.853 | 3.764   | -4.478  | 0       | rain              | 129.501 | 91.066  | 1.422  | 0.155   |
+| volatility\_emini | -87.802 | 1.564   | -56.123 | 0       | volatility\_emini | 3101.79 | 37.854  | 81.941 | 0       |
+
+
 
 
 
