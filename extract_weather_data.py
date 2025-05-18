@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon May  5 11:37:48 2025
-Extract precipitation data from NOAA
-@author: ruchuan2
-"""
 
 # -*- coding: utf-8 -*-
 """
