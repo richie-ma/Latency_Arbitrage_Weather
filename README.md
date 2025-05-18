@@ -125,6 +125,8 @@ Since the goal of this project is to know whether heavy precipitation disrupts t
 | rain              | -16.853 | 3.764   | -4.478  | 0       | rain              | 129.501 | 91.066  | 1.422  | 0.155   |
 | volatility\_emini | -87.802 | 1.564   | -56.123 | 0       | volatility\_emini | 3101.79 | 37.854  | 81.941 | 0       |
 
+We find that when the CME futures markets expereinces the heavy precipitation, the bid-ask spread is expected to reduce 0.003 basis point significantly, compared to the less precipitation periods. For BBO depth, we find the BBO depth reduces by 1.181 million dollars compared to the regular trading periods significantly. Similar effect is also found to non-BBO depths where it is expected to reduce 16.85 million dollars signficiantly. However, we find the heavy rain deos not have significant effects on the trading volume.
+
 The following are results from the ETF. Since there is non-BBO information avaiable from the TAQ data, our dependent variables only include bid-ask spread, BBO depth, and trading volume.
 
 |Bid-ask spread   | coef  | std err | t       | P>\|t\| | BBO Depth       | coef   | std err | t       | P>\|t\| |
