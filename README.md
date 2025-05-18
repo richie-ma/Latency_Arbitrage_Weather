@@ -159,8 +159,7 @@ Identifying HFT is challenging since their behavior might manifest in various wa
 It is obvious that regardless of it is in a heavy precipitation period, the latency arbitrage concentrates between 5 milliseconds and 6 milliseconds, and the intensity of latency aribitrage gradually reduces with the time going on. That is consistitent to the intuition that the latency arbitrage heavily relies on the speed advantage and ultra-low latency traders are more likely to earn profits. During the heavy precipitation period, the trading volume between the 5 milliseconds and 6 milliseconds decreases though the median would remain almost the same. However, there are fewer observations with high trading volume like in regualr trading periods. This is also true for other millisecond bins.
 
 The following figure shows the result for the total number of trades:
-
-<img src="images/trades_boxplot.png" alt = "Latency Aribtrage: Number of trades" width="800">
+<img src="images/trades_plot.png" alt = "Latency Aribtrage: Number of trades" width="800">
 
 
 
