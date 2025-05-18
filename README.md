@@ -119,7 +119,7 @@ Since the goal of this project is to know whether heavy precipitation disrupts t
 | rain              | 0.003 | 0.001   | 2.886   | 0.004   | rain              | -1.181 | 0.414   | -2.854  | 0.004   |
 | volatility\_emini | 0.026 | 0       | 52.511  | 0       | volatility\_emini | -9.964 | 0.172   | -57.943 | 0       |
 
-| Non-BBO depth     | coef    | std err | t       | P>\|t\| | Trading volume    | coef    | std err | t      | P>\|t\| |
+| Non-BBO depth     | coef    | std err | t       | P>\|t\| | Trading vol       | coef    | std err | t      | P>\|t\| |
 | ----------------- | ------- | ------- | ------- | ------- | ----------------- | ------- | ------- | ------ | ------- |
 | const             | 548.152 | 2.619   | 209.308 | 0       | const             | 2368.7  | 63.367  | 37.381 | 0       |
 | rain              | -16.853 | 3.764   | -4.478  | 0       | rain              | 129.501 | 91.066  | 1.422  | 0.155   |
