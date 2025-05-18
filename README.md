@@ -23,7 +23,7 @@ From NOAA we obtain precipitation data to identify periods when precipitation ma
 
 The National Centers for Environmental Information (NCEI) (previously known as the National Climatic Data Center (NCDC) which dissolved in 2015) are operated in part by an office of the National Oceanographic and Atmospheric Administration (NOAA). The NCDC data set 3260 (DSI-3260) also known as the 15 Minute Precipitation Data is available from 1971 through 2013. Since geo-location station data is not found for this period, I use the geo-location station data in NCEI’s 2014 and onwards Hourly Precipitation Data set (HPDv2 beta version). I focus on 2018-2019 data from the DSI-32604 and the HPDv2 beta version5 that provides 15-minute precipitation intervals. The raw data have some unreasonable values (e.g., negative precipitation), and I correct these observations with 0. I intersect the HDPv2 station data with the the 2011-2013 DSI-3260 station data to obtain a list of weather stations operating in Illinois, Indiana, Michigan, Ohio, Pennsylvania, and New Jersey for 2018-2019. The HPDv2 beta version readme file states precipitation data is in hundredths of an inch. My station list is as follows:
 
-<img src="images/weather_stations_map.png" alt = "Map of weather stations" width="1200">
+<img src="images/weather_stations_map.png" alt = "Map of weather stations" width="700">
 
 | Station ID    | Latitude | Longitude | State | Name                        |
 |---------------|----------|-----------|-------|-----------------------------|
@@ -163,13 +163,13 @@ I identify HTF futures market signals that HFTs can arbitrage in the NY cluster 
 
 Identifying HFT is challenging since their behavior might manifest in various ways depending on the intensity of their activities. Similar to the analyses I created before, I create a dummy variable that equals 1 if a precipitation of a 15-min interval is greater than the 3 times standard deviation of the daily precipitation, and 0 otherwise. We focus on the trading volume and the total number of trades during the following millisecond intervals: [5ms, 6ms), [6ms, 7ms), [7ms, 8ms), [8ms, 9ms), [9ms, 10ms). The following figure shows the result for the total trading volume in the SPY ETF.
 
-<img src="images/volume_boxplot.png" alt = "Latency Arbitrage: Trading Volume" width="800">
+<img src="images/volume_boxplot.png" alt = "Latency Arbitrage: Trading Volume" width="700">
 
 It is obvious that regardless of it is in a heavy precipitation period, the latency arbitrage concentrates between 5 milliseconds and 6 milliseconds, and the intensity of latency arbitrage gradually reduces with the time going on. That is consistent to the intuition that the latency arbitrage heavily relies on the speed advantage and ultra-low latency traders are more likely to earn profits. During the heavy precipitation period, the trading volume between the 5 milliseconds and 6 milliseconds decreases though the median would remain almost the same. However, there are fewer observations with high trading volume like in regular trading periods. This is also true for other millisecond bins.
 
 The following figure shows the result for the total number of trades:
 
-<img src="images/trades_plot.png" alt = "Latency Arbitrage: Number of trades" width="800">
+<img src="images/trades_plot.png" alt = "Latency Arbitrage: Number of trades" width="700">
 
 This result is more obvious that for the trading volume. One can find that during the heavy precipitation period, the number of trades reduces clearly though the box remains almost the same. During the millisecond bin [5ms, 6ms), one can easily find the maximum number of trades is around 2000 during the heavy precipitation, while this number is more than 3500 during the regular trading hours. Similar pattern can be also found for other millisecond bins.
 
