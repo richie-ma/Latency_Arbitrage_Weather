@@ -88,7 +88,7 @@ The National Centers for Environmental Information (NCEI) (previously known as t
 | USC00368491   | 41.6972  | -75.4827  | PA    | STILLWATER DAM            |
 | USC00368873   | 41.4792  | -79.4432  | PA    | TIONESTA 2 SE LAKE        |
 
-Here, I show a summary statistics of the precipitation during the whole sample period. Obviously, one can find that for each weather station across the whole sample period, the average precipitation is just 0.08 inches and the largest precipitation is 3.1 inches.
+Here, I show a summary statistics of the precipitation during the whole sample period. Obviously, one can find that for each weather station across the whole sample period, the average precipitation is just 0.08 inches and the largest precipitation is 3.1 inches. Thus, we could know that the microwave disruption is just a rare case and for most of trading days, the latency arbitrage is not likely to be affected by the weather.
 |       |   precipitation |
 |-------|-----------------|
 | count |    9990         |
@@ -104,7 +104,10 @@ Here, I show a summary statistics of the precipitation during the whole sample p
 In terms of futures data, I use the CME Market by Price (MBP) data provided by CME Datamine and I select the most-traded futures contracts according to the daily trading volume. For SPY data, I use the Daily Trade and Quote (TAQ) data. Specifically, I focus on the Millisecond Trades and NBBO data. Since the CME futures is traded during 18:00 to 17:00 ET while the ETF is traded during 9:30 to 16:00 ET, I concentrate regular trading hours from 9:30 to 16:00 ET. I find almost all trades are assigned the direction (e.g., buyer-initiated/seller-initiated) directly by the CME while no trade direction is assigned in the ETF by the data. Hence, I follow Lee and Ready (1991) to assign its trade direction, including both quote test and tick test. 
 
 # Market liquidity and precipitation
-Market liquidity is likely to be affected by the precipitation with the importance of communciation increasing. Market makers may reduce their liquidity provision during heavy precipitation period, because of both communication delay and picking off risks. Thus, I first assess how the precipitation affects the market liquidity during the heavy precipitation
+Market liquidity is likely to be affected by the precipitation with the importance of communciation increasing. Market makers may reduce their liquidity provision during heavy precipitation period, because of both communication delay and picking off risks. Thus, I first assess how the precipitation affects the market liquidity during the heavy precipitation. Here, I foucus on the following liquidity indicators, including the bid-ask spread expressed in basis (dollar spread over the midpoint price), BBO dollar dpeths and non-BBO depths, both express expressed in millions. I select the dollar trading volume and volatility as control variables. Since the weather data is in 15-min interval, I calculate the time-weighted indicators for every 15 minutes. I calcualte the indicators for both futures and ETF markets.
+
+Since the goal of this project is to know whether heavy precipitation disrupts the market liquidity, hence, I do not focus on the magnitude of precipitation. To represent the heavy precipitation, I first calculate the total precipitation for all weather stations, and I create a dummy (binary) variable `rain`, which equals 1 if a precipitation of a 15-min interval is greater than the 2 times standard deviation of the daily precipitation, and 0 otherwise. 
+
 
 
 
