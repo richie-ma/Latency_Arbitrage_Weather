@@ -14,4 +14,43 @@ Latency arbitrage is one of the most popular ultra-low latency stratgies in the 
 ## Data
 In this section, I discuss both the precipitation data and the market data.
 ### Weather data
-The National Centers for Environmental Information (NCEI) (previously known as the National Climatic Data Center (NCDC) which dissolved in 2015) are operated in part by an office of the National Oceanographic and Atmospheric Administration (NOAA). The NCDC data set 3260 (DSI-3260) also known as the 15 Minute Precipitation Data is available from 1971 through 2013. Since geo-location station data is not found for this period, I use the geo-location station data in NCEI’s 2014 and onwards Hourly Precipitation Data set (HPDv2 beta version). I focus on 2018-2019 data from the DSI-32604 and the HPDv2 beta version5 that provides 15-minute precipitation intervals. The raw data have some unreasonable values (e.g., negative precipitation), and I correct these observations with 0. I intersect the HDPv2 station data with the the 2011-2013 DSI-3260 station data to obtain a list of weather stations operating in Illinois, Indiana, Michigan, Ohio, Pennsylvania, and New Jersey for 2018-2019.
+The National Centers for Environmental Information (NCEI) (previously known as the National Climatic Data Center (NCDC) which dissolved in 2015) are operated in part by an office of the National Oceanographic and Atmospheric Administration (NOAA). The NCDC data set 3260 (DSI-3260) also known as the 15 Minute Precipitation Data is available from 1971 through 2013. Since geo-location station data is not found for this period, I use the geo-location station data in NCEI’s 2014 and onwards Hourly Precipitation Data set (HPDv2 beta version). I focus on 2018-2019 data from the DSI-32604 and the HPDv2 beta version5 that provides 15-minute precipitation intervals. The raw data have some unreasonable values (e.g., negative precipitation), and I correct these observations with 0. I intersect the HDPv2 station data with the the 2011-2013 DSI-3260 station data to obtain a list of weather stations operating in Illinois, Indiana, Michigan, Ohio, Pennsylvania, and New Jersey for 2018-2019. My station list is as follows:
+| Station ID    | Latitude | Longitude | State | Name                        |
+|---------------|----------|-----------|-------|-----------------------------|
+| USC00111577   | 41.7372  | -87.7775  | IL    | CHICAGO MIDWAY AP 3SW      |
+| USC00112011   | 41.4492  | -87.6221  | IL    | CRETE                       |
+| USC00114603   | 41.1351  | -87.8856  | IL    | KANKAKEE METRO WASTEWATER  |
+| USC00115825   | 41.3708  | -88.4336  | IL    | MORRIS 1 NW                |
+| USC00120200   | 41.6639  | -85.0183  | IN    | ANGOLA                     |
+| USC00120830   | 40.8143  | -85.1546  | IN    | BLUFFTON 6N                |
+| USC00121147   | 40.4835  | -86.3961  | IN    | BURLINGTON                 |
+| USC00121417   | 40.6653  | -86.9550  | IN    | CHALMERS 5 W               |
+| USC00121739   | 41.1452  | -85.4898  | IN    | COLUMBIA CITY              |
+| USC00123206   | 41.3415  | -85.1292  | IN    | GARRETT                    |
+| USC00123418   | 41.5575  | -85.8825  | IN    | GOSHEN 3SW                 |
+| USC00124181   | 40.8555  | -85.4980  | IN    | HUNTINGTON                 |
+| USC00124782   | 41.5269  | -86.2692  | IN    | LAKEVILLE                  |
+| USC00124837   | 41.6116  | -86.7297  | IN    | LAPORTE                    |
+| USC00125337   | 40.5800  | -85.6586  | IN    | MARION 2 N                 |
+| USC00126864   | 40.7646  | -86.0740  | IN    | PERU                       |
+| USC00127069   | 40.4667  | -84.9667  | IN    | PORTLAND WATER WORKS      |
+| USC00127298   | 40.9239  | -87.1754  | IN    | RENSSELAER                 |
+| USC00127482   | 41.0665  | -86.2096  | IN    | ROCHESTER                  |
+| USC00129724   | 41.1645  | -84.8482  | IN    | WOODBURN 3N                |
+| USC00330059   | 41.1573  | -81.5664  | OH    | AKRON WPCS                 |
+| USC00330107   | 40.9551  | -81.1167  | OH    | ALLIANCE 3 NNW             |
+| USC00330493   | 40.6335  | -81.5577  | OH    | BEACH CITY LAKE           |
+| USC00330639   | 41.1169  | -81.0094  | OH    | BERLIN LAKE               |
+| USC00330862   | 41.3831  | -83.6111  | OH    | BOWLING GREEN WWTP        |
+| USC00331042   | 41.4619  | -84.5272  | OH    | BRYAN 2 SE                |
+| USC00331466   | 40.7333  | -82.3667  | OH    | CHARLES MILL LAKE         |
+| USC00332098   | 41.2783  | -84.3847  | OH    | DEFIANCE                  |
+| USC00332272   | 40.5622  | -81.4092  | OH    | DOVER DAM                 |
+| USC00332791   | 41.0461  | -83.6622  | OH    | FINDLAY WPCC              |
+| USC00333021   | 40.7231  | -82.7999  | OH    | GALION WATER WORKS        |
+| USC00334473   | 40.4709  | -81.1955  | OH    | LEESVILLE LAKE            |
+| USC00334551   | 40.7247  | -84.1294  | OH    | LIMA WWTP                 |
+| USC00334942   | 40.6142  | -83.1300  | OH    | MARION 2 N                |
+| USC00334992   | 40.7667  | -81.5333  | OH    | MASSILLON                 |
+
+
