@@ -165,7 +165,7 @@ The following figure shows the result for the total number of trades:
 
 This result is more obvious that for the trading volume. One can find that during the heavy precipitation period, the number of trades reduces clearly though the box remains almost the same. During the millisecond bin [5ms, 6ms), one can easily find the maximum number of trades is around 2000 during the heavy precipitation, while this number is more than 3500 during the regular trading hours. Similar pattern can be also found for other millisecond bins.
 
-## Concluding remarks
+## Concluding remarks and future improvements
 This project analyses the latency arbitrage and weather and the conclusions can be summarized as follows:
 
 1) The weather condition helps explain the market liquidity and heavy precipitation reduces the market liquidity, suggesting by wider bid-ask spread, less depths in the book.
