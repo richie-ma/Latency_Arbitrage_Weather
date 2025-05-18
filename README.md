@@ -141,6 +141,12 @@ The following are results from the ETF. Since there is non-BBO information avaia
 | rain            | -3.943  | 13.019  | -0.303 | 0.762   |
 | volatility\_spy | 3791.8  | 52.221  | 72.611 | 0       |
 
+Similarly to what I find for the CME E-mini S&P 500 futures market, during the heavy rain period, the bid-ask spread in the SPY is expected to reduce by 0.013 bps, and the effect is statistically significant at 5%. The BBO depth is expected to reduce by 0.044 million dollars and its effect is statistically signifiant at 1%. The trading volume is expected to decrease by 3.94 million dollars while the decrease effect is not statistically significant at 1%. 
+
+This result indicates a possible pattern of latency arbitrage. When it rains heavily, the market makers are likely to reduce the liquidity provision in the SPY market to avoid the picking off risks, which could be seen from the results for bid-ask spread and BBO depth. However, the heavy precipitation does not eliminate the latency arbitrage, suggesting by the trading volume.
+
+
+
 
 
 
