@@ -52,5 +52,41 @@ The National Centers for Environmental Information (NCEI) (previously known as t
 | USC00334551   | 40.7247  | -84.1294  | OH    | LIMA WWTP                 |
 | USC00334942   | 40.6142  | -83.1300  | OH    | MARION 2 N                |
 | USC00334992   | 40.7667  | -81.5333  | OH    | MASSILLON                 |
+| USC00335297   | 40.5375  | -81.9197  | OH    | MILLERSBURG               |
+| USC00336123   | 41.2500  | -82.6167  | OH    | NORWALK HIWAY DEPT        |
+| USC00336196   | 41.2802  | -82.2187  | OH    | OBERLIN                   |
+| USC00336702   | 40.6245  | -82.3271  | OH    | PLEASANT HILL LAKE        |
+| USC00336949   | 41.1366  | -81.2844  | OH    | RAVENNA 2 S               |
+| USC00337383   | 40.5449  | -84.4374  | OH    | ST. MARYS 3 W             |
+| USC00338313   | 41.1167  | -83.1667  | OH    | TIFFIN                    |
+| USC00338539   | 40.8428  | -83.2767  | OH    | UPPER SANDUSKY WTR WK     |
+| USC00339312   | 40.7833  | -81.9167  | OH    | WOOSTER EXP STATION       |
+| USC00360147   | 41.3579  | -77.9264  | PA    | ALVIN R BUSH DAM          |
+| USC00360560   | 40.8620  | -75.6429  | PA    | BELTZVILLE DAM            |
+| USC00360725   | 40.3027  | -77.5894  | PA    | BLAIN 5SW                 |
+| USC00360785   | 40.3803  | -76.0275  | PA    | BLUE MARSH LAKE           |
+| USC00360821   | 40.1597  | -79.0287  | PA    | BOSWELL                   |
+| USC00361139   | 40.8415  | -79.9163  | PA    | BUTLER 2 SW               |
+| USC00361961   | 40.9583  | -78.5294  | PA    | CURWENSVILLE LAKE         |
+| USC00362245   | 41.3421  | -78.1401  | PA    | DRIFTWOOD                 |
+| USC00362323   | 41.5216  | -76.4043  | PA    | DUSHORE                   |
+| USC00363018   | 41.1184  | -75.7277  | PA    | FRANCIS E WALTER DAM      |
+| USC00363028   | 41.4004  | -79.8305  | PA    | FRANKLIN                  |
+| USC00364001   | 40.4388  | -78.4173  | PA    | HOLLIDAYSBURG 2NW         |
+| USC00364325   | 41.4992  | -80.4681  | PA    | JAMESTOWN 2 NW            |
+| USC00364432   | 41.6770  | -78.8036  | PA    | KANE 1NNE                 |
+| USC00364778   | 40.1190  | -76.4265  | PA    | LANDISVILLE 2 NW          |
+| USC00365790   | 40.8847  | -77.4750  | PA    | MILLHEIM                  |
+| USC00366111   | 40.4120  | -79.7245  | PA    | MURRYSVILLE 2 SW          |
+| USC00366233   | 41.0172  | -80.3615  | PA    | NEW CASTLE 1 N            |
+| USC00366916   | 40.9017  | -78.0842  | PA    | PHILIPSBURG 8 E           |
+| USC00367186   | 41.5890  | -75.3303  | PA    | PROMPTON DAM              |
+| USC00367229   | 40.9248  | -79.2825  | PA    | PUTNEYVILLE 2 SE DAM      |
+| USC00367931   | 40.8153  | -76.8556  | PA    | SELINSGROVE CAA AIRPORT   |
+| USC00367938   | 40.3552  | -75.3131  | PA    | SELLERSVILLE              |
+| USC00368057   | 41.1831  | -76.1488  | PA    | SHICKSHINNY 3 N           |
+| USC00368491   | 41.6972  | -75.4827  | PA    | STILLWATER DAM            |
+| USC00368873   | 41.4792  | -79.4432  | PA    | TIONESTA 2 SE LAKE        |
+
 
 
