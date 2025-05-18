@@ -154,7 +154,7 @@ the NY cluster securities within 5 to 10 milliseconds after the selected futures
 
 Identifying HFT is challenging since their behavior might manifest in various ways depending on the intensity of their activities. Similar to the analyses I created before, I create a dummy variable that equals 1 if a precipitation of a 15-min interval is greater than the 3 times standard deviation of the daily precipitation, and 0 otherwise. We focus on the trading volume and the total number of trades during the following millisecond intervals: [5ms, 6ms), [6ms, 7ms), [7ms, 8ms), [8ms, 9ms), [9ms, 10ms). The following figure shows the result for the total trading volume in the SPY ETF.
 
-<img src="images/volume_boxplot.png" alt = "Latency Aribtrage: Trading Volume" width="600">
+<img src="images/volume_boxplot.png" alt = "Latency Aribtrage: Trading Volume" width="800">
 
 
 
