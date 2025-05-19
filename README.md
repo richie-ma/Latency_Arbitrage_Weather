@@ -123,16 +123,27 @@ Market liquidity is likely to be affected by the precipitation with the importan
 
 ### Summary statistics of market liquidity
 I show the summary statistics of the market liquidity across the whole sample period as follows. 
-|       |   spread_emini |   BBO_emini |   Non_BBO_emini |   volatility_emini |   vol_emini |   #trades_emini |   spread_spy |   BBO_spy |   volatility_spy |   vol_spy |   #trades_spy |
-|-------|----------------|-------------|-----------------|--------------------|-------------|-----------------|--------------|-----------|------------------|-----------|---------------|
-| count |        9004    |     9004    |         9004    |            9004    |     9004    |         9004    |      9004    |   9004    |          9004    |   9004    |        9004   |
-| mean  |           0.88 |       37.27 |          434.64 |               1.25 |     6278.91 |         6920.47 |         0.57 |      0.83 |             0.13 |    732.13 |       13769.5 |
-| std   |           0.05 |       18.88 |          170.45 |               0.99 |     4686.41 |         5699.85 |         0.25 |      0.61 |             0.1  |    638.46 |       12010.5 |
-| min   |           0.77 |        3.23 |           66.95 |               0.12 |      673.24 |          573    |         0.33 |      0.16 |             0.01 |     83.47 |        2103   |
-| 25%   |           0.84 |       22.39 |          305.03 |               0.6  |     3042.31 |         2973    |         0.44 |      0.42 |             0.07 |    343.96 |        6544   |
-| 50%   |           0.87 |       35.55 |          417.08 |               0.96 |     4874.92 |         5106.5  |         0.5  |      0.6  |             0.1  |    549.21 |        9990.5 |
-| 75%   |           0.9  |       49.7  |          541.44 |               1.57 |     8031.21 |         9051.75 |         0.62 |      0.94 |             0.17 |    877.89 |       16678   |
-| max   |           1.17 |      137.98 |         1267.64 |              10.3  |    52576.6  |        65976    |         4.61 |      4.3  |             1.32 |   9201.33 |      189976   |
+|       |   spread_emini |   BBO_emini |   Non_BBO_emini |   volatility_emini |   vol_emini |   #trades_emini |  
+|-------|----------------|-------------|-----------------|--------------------|-------------|-----------------|
+| count |        9004    |     9004    |         9004    |            9004    |     9004    |         9004    | 
+| mean  |           0.88 |       37.27 |          434.64 |               1.25 |     6278.91 |         6920.47 |
+| std   |           0.05 |       18.88 |          170.45 |               0.99 |     4686.41 |         5699.85 |  
+| min   |           0.77 |        3.23 |           66.95 |               0.12 |      673.24 |          573    |
+| 25%   |           0.84 |       22.39 |          305.03 |               0.6  |     3042.31 |         2973    |
+| 50%   |           0.87 |       35.55 |          417.08 |               0.96 |     4874.92 |         5106.5  |
+| 75%   |           0.9  |       49.7  |          541.44 |               1.57 |     8031.21 |         9051.75 |
+| max   |           1.17 |      137.98 |         1267.64 |              10.3  |    52576.6  |        65976    |
+
+|       |   spread_spy |   BBO_spy |   volatility_spy |   vol_spy |   #trades_spy |
+|-------|--------------|-----------|------------------|-----------|---------------|
+| count |      9004    |   9004    |          9004    |   9004    |        9004   |
+| mean  |         0.57 |      0.83 |             0.13 |    732.13 |       13769.5 |
+| std   |         0.25 |      0.61 |             0.1  |    638.46 |       12010.5 |
+| min   |         0.33 |      0.16 |             0.01 |     83.47 |        2103   |
+| 25%   |         0.44 |      0.42 |             0.07 |    343.96 |        6544   |
+| 50%   |         0.5  |      0.6  |             0.1  |    549.21 |        9990.5 |
+| 75%   |         0.62 |      0.94 |             0.17 |    877.89 |       16678   |
+| max   |         4.61 |      4.3  |             1.32 |   9201.33 |      189976   |
 
 ### Regression
 Since the goal of this project is to know whether heavy precipitation disrupts the market liquidity, hence, I do not focus on the magnitude of precipitation. To represent the heavy precipitation, I first calculate the total precipitation for all weather stations, and I create a dummy (binary) variable `rain`, which equals 1 if a precipitation of a 15-min interval is greater than the 2 times standard deviation of the daily precipitation, and 0 otherwise. Here are the results for the CME E-mini futures:
