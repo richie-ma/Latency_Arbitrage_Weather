@@ -145,6 +145,8 @@ I show the summary statistics of the market liquidity across the whole sample pe
 | 75%   |         0.62 |      0.94 |             0.17 |    877.89 |       16678   |
 | max   |         4.61 |      4.3  |             1.32 |   9201.33 |      189976   |
 
+One can find that on average the bid-offer spread is wider than that in the SPY ETF (0.88 bps vs 0.57 bps). Though the contract size of E-mini S&P 500 futures is 10 times larger than the ETF, it is obvious that the BBO depth in the SPY market is relatively lower than that in the futures market. Similarly, the volatility of the ETF market is lower than that in the futures markets. However, one can see that SPY ETF markets witness more trades than the futures markets, regardless of their averages or even maximum though the trading volume of SPY is lower than that in the futures.
+
 ### Regression
 Since the goal of this project is to know whether heavy precipitation disrupts the market liquidity, hence, I do not focus on the magnitude of precipitation. To represent the heavy precipitation, I first calculate the total precipitation for all weather stations, and I create a dummy (binary) variable `rain`, which equals 1 if a precipitation of a 15-min interval is greater than the 2 times standard deviation of the daily precipitation, and 0 otherwise. Here are the results for the CME E-mini futures:
 
