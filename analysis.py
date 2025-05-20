@@ -15,6 +15,158 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import os
 
+# correlation breakdown
+# Oct 22, 2018 as an example
+
+spy = pd.read_pickle(
+    "C:/Users/ruchuan2/Box/latency_arbitrage/20180806_spy.pkl", compression='gzip')
+futures = pd.read_pickle(
+    "C:/Users/ruchuan2/Box/latency_arbitrage/20180806_futures.pkl", compression='gzip')
+
+# daily
+
+spy['Time'] = pd.to_timedelta(
+    spy['time_m'], unit='s') + pd.to_datetime(spy['date'])
+spy['Time'] = pd.to_datetime(spy['Time'])
+spy['Time'] = spy['Time'].dt.tz_localize('America/New_York')
+spy.drop(spy[(spy['bid'] == 0) | (
+    spy['ask'] == 0)].index, inplace=True)
+spy.drop(spy[spy['bid'] >= spy['ask']].index,
+         inplace=True)
+
+spy['midpoint'] = (spy['bid']+spy['ask'])/2*10
+futures.drop(futures[(futures['Bid_PX_1'] == 0) | (futures['Ask_PX_1'] == 0)].index,
+             inplace=True)
+
+futures.drop(futures[futures['Bid_PX_1'] >= futures['Ask_PX_1']].index,
+             inplace=True)
+futures['midpoint'] = (futures['Bid_PX_1'] + futures['Ask_PX_1'])/2
+
+merged_data = pd.merge_asof(futures[['Time', 'midpoint']], spy[['Time', 'midpoint']],
+                            suffixes=('_e-mini', '_spy'), left_on='Time', right_on='Time').ffill()
+merged_data = merged_data.dropna()
+
+
+# one hour
+start = pd.to_datetime('10:00').time()
+end = pd.to_datetime('10:59').time()
+
+merged_1h = merged_data[(merged_data['Time'].dt.time >= start)
+                        & (merged_data['Time'].dt.time <= end)]
+# merged_1h = pd.melt(merged_1h, id_vars='Time', value_vars=['midpoint_e-mini', 'midpoint_spy'],
+#                    var_name='market', value_name='midpoint')
+
+# 1minute
+
+start = pd.to_datetime('11:00').time()
+end = pd.to_datetime('11:01').time()
+
+merged_1m = merged_data[(merged_data['Time'].dt.time >= start)
+                        & (merged_data['Time'].dt.time <= end)]
+# merged_1m = pd.melt(merged_1m, id_vars='Time', value_vars=['midpoint_e-mini', 'midpoint_spy'],
+#                    var_name='market', value_name='midpoint')
+
+# 30s
+
+start = pd.to_datetime('09:31:00').time()
+end = pd.to_datetime('09:31:30').time()
+
+merged_30s = merged_data[(merged_data['Time'].dt.time >= start)
+                         & (merged_data['Time'].dt.time <= end)]
+# merged_250ms = pd.melt(merged_250ms, id_vars='Time', value_vars=['midpoint_e-mini', 'midpoint_spy'],
+#                       var_name='market', value_name='midpoint')
+# merged_data = pd.melt(merged_data, id_vars='Time', value_vars=['midpoint_e-mini', 'midpoint_spy'],
+#                      var_name='market', value_name='midpoint')
+
+# figures
+fig, ax1 = plt.subplots(figsize=(10, 6))
+ax1.plot(merged_data['Time'], merged_data['midpoint_e-mini'],
+         label='E-mini', color='blue')
+ax1.set_ylabel("E-mini mipoint price", color='blue')
+ax1.tick_params(axis='y', labelcolor='blue')
+
+# Create right axis for SPY
+ax2 = ax1.twinx()
+ax2.plot(merged_data['Time'], merged_data['midpoint_spy'],
+         label='SPY', color='green')
+ax2.set_ylabel("SPY midpoint price * 10", color='green')
+ax2.tick_params(axis='y', labelcolor='green')
+
+plt.title("Day")
+plt.xlabel("Time")
+plt.ylabel("Midpoint price")
+
+# Combined legend
+lines_1, labels_1 = ax1.get_legend_handles_labels()
+lines_2, labels_2 = ax2.get_legend_handles_labels()
+ax1.legend(lines_1 + lines_2, labels_1 + labels_2, loc='upper left')
+
+
+fig, ax1 = plt.subplots(figsize=(10, 6))
+ax1.plot(merged_1h['Time'], merged_1h['midpoint_e-mini'],
+         label='E-mini', color='blue')
+ax1.set_ylabel("E-mini mipoint price", color='blue')
+ax1.tick_params(axis='y', labelcolor='blue')
+
+# Create right axis for SPY
+ax2 = ax1.twinx()
+ax2.plot(merged_1h['Time'], merged_1h['midpoint_spy'],
+         label='SPY', color='green')
+ax2.set_ylabel("SPY midpoint price * 10", color='green')
+ax2.tick_params(axis='y', labelcolor='green')
+
+plt.title("Hour")
+plt.xlabel("Time")
+plt.ylabel("Midpoint price")
+# Combined legend
+lines_1, labels_1 = ax1.get_legend_handles_labels()
+lines_2, labels_2 = ax2.get_legend_handles_labels()
+ax1.legend(lines_1 + lines_2, labels_1 + labels_2, loc='upper left')
+
+
+fig, ax1 = plt.subplots(figsize=(10, 6))
+ax1.plot(merged_1m['Time'], merged_1m['midpoint_e-mini'],
+         label='E-mini', color='blue')
+ax1.set_ylabel("E-mini mipoint price", color='blue')
+ax1.tick_params(axis='y', labelcolor='blue')
+
+# Create right axis for SPY
+ax2 = ax1.twinx()
+ax2.plot(merged_1m['Time'], merged_1m['midpoint_spy'],
+         label='SPY', color='green')
+ax2.set_ylabel("SPY midpoint price * 10", color='green')
+ax2.tick_params(axis='y', labelcolor='green')
+
+plt.title("Minute")
+plt.xlabel("Time")
+plt.ylabel("Midpoint price")
+# Combined legend
+lines_1, labels_1 = ax1.get_legend_handles_labels()
+lines_2, labels_2 = ax2.get_legend_handles_labels()
+ax1.legend(lines_1 + lines_2, labels_1 + labels_2, loc='upper left')
+
+fig, ax1 = plt.subplots(figsize=(10, 6))
+ax1.plot(merged_30s['Time'], merged_30s['midpoint_e-mini'],
+         label='E-mini', color='blue')
+ax1.set_ylabel("E-mini mipoint price", color='blue')
+ax1.tick_params(axis='y', labelcolor='blue')
+
+# Create right axis for SPY
+ax2 = ax1.twinx()
+ax2.plot(merged_30s['Time'], merged_30s['midpoint_spy'],
+         label='SPY', color='green')
+ax2.set_ylabel("SPY midpoint price * 10", color='green')
+ax2.tick_params(axis='y', labelcolor='green')
+
+plt.title("30s")
+plt.xlabel("Time")
+plt.ylabel("Midpoint price")
+# Combined legend
+lines_1, labels_1 = ax1.get_legend_handles_labels()
+lines_2, labels_2 = ax2.get_legend_handles_labels()
+ax1.legend(lines_1 + lines_2, labels_1 + labels_2, loc='upper left')
+
+# Create right axis for SPY
 market_liquidity_data = pd.read_pickle(
     "C:/Users/ruchuan2/Box/latency_arbitrage/market_data.pkl")
 
