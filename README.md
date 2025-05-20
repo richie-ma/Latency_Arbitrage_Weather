@@ -15,6 +15,15 @@ Latency arbitrage is one of the most popular ultra-low latency strategies in the
 
 HFTs are a subset of algorithmic trading (AT) firms made possible by electronic trading. ATs use computer algorithms to execute trading decisions with minimal human intervention. HFTs differ from other ATs given their substantial investment in financial technologies that enhance the speed of order placement in response to new market information. This enables HFTs to capitalize on strategies that leverage differences in reaction times. Investments in progressively faster telecommunication systems between the CME and the NY cluster have been massive. In 2010, a high-speed fiber optic cable connecting the two markets was completed. However, in September of the same year, trading firms started soliciting permission from the Federal Communications Commission (FCC) to build microwave transmission routes along the same corridor. Compared to fiber optic cables, microwaves transmit information about 2 milliseconds faster, yet they are vulnerable to disruptions due to rainfall and snow and offer a more limited bandwidth. Using FCC records, literature document that by September 2012 fifteen microwave registered networks were operating between Chicago and New York using 6, 11, and 18 GHz bands. As of July 2023, FCC records showed eight licensed transmission towers using 6, 11, 18, and 22 GHz bands placed on top or near the CME data center in Aurora, Illinois. While the microwave networks have improved both their speed and capacity over time, they have been unable to eclipse fiber optics in terms of reliability and capacity.
 
+
+<img src="images/day.png" alt = "Day" width="800">
+
+<img src="images/hour.png" alt = "Hour" width="800">
+
+<img src="images/minute.png" alt = "Minute" width="800">
+
+<img src="images/30s.png" alt = "30s" width="800">
+
 ## Data
 In this section I detail my data sources. I use four data sources that offer precipitation and market data for the period from 2018 to 2019, the National Oceanic and Atmospheric Administration (NOAA), the New York Stock Exchange (NYSE) Daily Trade and Quote (DTAQ) data, the CME Market by Price data, and Bloomberg.   
 
